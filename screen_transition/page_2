@@ -1,0 +1,42 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+class Page2 extends StatelessWidget {
+  const Page2({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Thanks for watching'),
+      ),
+      body: Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              'Page2',
+              style: TextStyle(
+                fontSize: 50.0,
+                color: Colors.white,
+              ),
+            ),
+            const SizedBox(
+              height: 200.0,
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text('BACK'),
+              style: ElevatedButton.styleFrom(
+                minimumSize: const Size(200, 50),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
