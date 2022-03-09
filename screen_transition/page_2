@@ -27,6 +27,8 @@ class Page2 extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
+              
+                /// Back Screen Transition(戻る画面遷移)
                 Navigator.pop(context);
               },
               child: const Text('BACK'),
