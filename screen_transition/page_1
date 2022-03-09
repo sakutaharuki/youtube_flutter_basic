@@ -46,14 +46,14 @@ class MyHomePage extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                /// 普通の画面遷移
+                /// Normal screen transition（普通の画面遷移）
                 Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) => const Page2(),
                     ));
 
-                /// 行ったら戻れない画面遷移
+                /// Screen transitions that you can't get back to once you've gone.（行ったら戻れない画面遷移）
 
                 /*
                 Navigator.pushAndRemoveUntil(
