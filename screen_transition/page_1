@@ -1,0 +1,78 @@
+import 'package:flutter/material.dart';
+import 'package:youtube/page2.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData(
+        scaffoldBackgroundColor: Colors.black,
+        primarySwatch: Colors.yellow,
+      ),
+      home: const MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Thanks for watching'),
+      ),
+      body: Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              'Page1',
+              style: TextStyle(
+                fontSize: 50.0,
+                color: Colors.white,
+              ),
+            ),
+            const SizedBox(
+              height: 200.0,
+            ),
+            ElevatedButton(
+              onPressed: () {
+                /// 普通の画面遷移
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const Page2(),
+                    ));
+
+                /// 行ったら戻れない画面遷移
+
+                /*
+                Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const Page2(),
+                    ),
+                    (route) => false);
+
+                 */
+              },
+              child: const Text('NEXT'),
+              style: ElevatedButton.styleFrom(minimumSize: const Size(200, 50)),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+//
